@@ -17,7 +17,9 @@ int main()
     // C++ style
     std::cout << "hello" << std::endl;
     cout << "hello" << endl;    // using namespace std;
-    cout << "Jestem Piotr, mam " << 31 << " lat" << endl;
+    cout << "Jestem Piotr, mam " << 31 << " lat" << endl;   // 31 is converted into string
+    cout << "Jestem nerdem, mam " << 0x1f << " lat" << endl;// 0x1f is also sonverted into string
+
 
     // C style
     puts("hello");
