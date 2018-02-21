@@ -78,7 +78,7 @@ int main()
     // Napisz program ktory spyta o dane i policzy
     // 1) BMI
     // 2) kW -> KM
-    // 3) kurs $/â‚¬/zÅ‚
+    // 3) kurs $/€/z³
 
     cout << "Ile masz PLN?";
     float pln;
@@ -92,13 +92,13 @@ int main()
     // if
     if (wiek >= 18)
         cout << "moge pic alkohol" << endl;
-    cout << "moge chodzic na imprezy" << endl;  // czÄ™sty bÅ‚Ä…d u poczÄ…tkujÄ…cych!!! uwaga na kolokwium
+    cout << "moge chodzic na imprezy" << endl;  // czêsty b³¹d u pocz¹tkuj¹cych!!! uwaga na kolokwium
 
-                                                // else-if
-                                                // else
+    // else-if
+    // else
 
-                                                // cwiczenie 2
-                                                // Napisz program wczytujacy 3 liczby calkowite i wypisujacy liczbe najwieksza
+    // cwiczenie 2
+    // Napisz program wczytujacy 3 liczby calkowite i wypisujacy liczbe najwieksza
     {
         cout << "podaj a b c: ";
         int a, b, c;
@@ -122,13 +122,13 @@ int main()
     cerr << "O kurde, cos poszlo nie tak!" << endl;
 
 
-    // int j albo zamknÄ…Ä‡ w klamerki
+    // int j albo zamkn¹æ w klamerki
     cout << "for loop";
     {
         int i;
         for (i = 0; i < 10; i++)    // for (i = 3; i < 10; i++, cout << "!" << endl)
             cout << i << endl;
-        cout << i*i << endl;        // czÄ™sty bÅ‚Ä…d u poczÄ…tkujÄ…cych!!! uwaga na kolokwium
+        cout << i*i << endl;        // czêsty b³¹d u pocz¹tkuj¹cych!!! uwaga na kolokwium
     }
 
 
@@ -161,13 +161,13 @@ int main()
         for (i = start; i <= stop; i = i + 1) // int i; i += 1; i++;
             sum = sum + i;  // sum += i;
 
-        cout << "Suma liczb od " << start << " " << stop << " = " << sum << endl;
+        cout << "Suma liczb od " << start << " "<< stop <<" = " << sum << endl;
     }
 
 
     int chybaLiczbaPierwsza = 104708;
     bool czyNaPewno = true;
-    // czy jest liczbÄ… pirwszÄ…
+    // czy jest liczb¹ pirwsz¹
     for (int i = 2; i < chybaLiczbaPierwsza; i++)
     {
         if (chybaLiczbaPierwsza % i == 0)
@@ -195,20 +195,20 @@ int main()
     /*
     // liczby pierwsze
     {
-    for (int i = 1; i < 1000000; i++)
-    {
-    bool isPrime = true;
-    for (int j = 2; j < i; j++)
-    {
-    if (i % j == 0)
-    {
-    isPrime = false;
-    break;
-    }
-    }
-    if (isPrime)
-    cout << i << endl;
-    }
+        for (int i = 1; i < 1000000; i++)
+        {
+            bool isPrime = true;
+            for (int j = 2; j < i; j++)
+            {
+                if (i % j == 0)
+                {
+                    isPrime = false;
+                    break;
+                }
+            }
+            if (isPrime)
+                cout << i << endl;
+        }
     }
     */
 
@@ -228,8 +228,8 @@ int main()
 
     // string - szyfr cezara, stdin, stdout, wysylanie komunikatow
 
-    int tab[10] = { 1, 2, 3 };  // na poczÄ…tek nie zainicjowane
-                                // indexowane od 0 do (n-1) !!! // bardzo czÄ™sty bÅ‚Ä…d
+    int tab[10] = { 1, 2, 3 };  // na pocz¹tek nie zainicjowane
+    // indexowane od 0 do (n-1) !!! // bardzo czêsty b³¹d
     for (int i = 1; i <= 10; i++)
     {
         cout << tab[i] << endl;
@@ -255,8 +255,8 @@ int main()
 
 
     // randoms
-    // 1. najpierw wypisac i niech kaÅ¼dy powie co wyszÅ‚o
-    // 2. Ä‡wiczenie z rozkÅ‚adem
+    // 1. najpierw wypisac i niech ka¿dy powie co wysz³o
+    // 2. æwiczenie z rozk³adem
     int randoms[10] = { 0 };
     for (int i = 0; i<1000000; i++)
     {
