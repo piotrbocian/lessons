@@ -228,32 +228,7 @@ int main()
         }
     }
 
-    // string - szyfr cezara, stdin, stdout, wysylanie komunikatow
 
-    int tab[10] = { 1, 2, 3 };  // na pocz¹tek nie zainicjowane
-    // indexowane od 0 do (n-1) !!! // bardzo czêsty b³¹d
-    for (int i = 1; i <= 10; i++)
-    {
-        cout << tab[i] << endl;
-    }
-
-
-    // fibbonaci na tablicach
-    int fib[10] = { 1, 1 };
-    for (int i = 2; i < 10; i++)
-    {
-        fib[i] = fib[i - 1] + fib[i - 2];
-        cout << fib[i] << endl;
-    }
-
-
-    //string tekst = "WSB";
-    //cout << tekst[0] << endl;
-    //cout << tekst[1] << endl;
-    //cout << tekst
-    //cout << tekst.length();
-
-    char tekst[] = "WSB";
 
 
     // randoms
