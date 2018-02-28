@@ -194,10 +194,10 @@ int main()
         cout << endl;
     }
 
-    /*
+    
     // liczby pierwsze
     {
-        for (int i = 1; i < 1000000; i++)
+        for (int i = 1; i < 10000; i++)
         {
             bool isPrime = true;
             for (int j = 2; j < i; j++)
@@ -212,22 +212,7 @@ int main()
                 cout << i << endl;
         }
     }
-    */
-
-    // fibbonacci
-    {
-        int a = 0;
-        int b = 1;
-        int sum = 0;
-        for (int i = 0; sum < 1000; i++)
-        {
-            sum = a + b;
-            a = b;
-            b = sum;
-            cout << sum << endl;
-        }
-    }
-
+    
 
 
 
