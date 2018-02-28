@@ -16,7 +16,7 @@ int main()
     if (b > max) max = b;
     if (c > max) max = c;
     cout << endl << max;
-	cerr << "program wykonal sie bez bledow";
+    cerr << "program wykonal sie bez bledow";
 
     return 0;
 }
