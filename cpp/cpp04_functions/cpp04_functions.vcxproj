@@ -23,7 +23,7 @@
     <ProjectGuid>{A7716B8C-C613-4E01-B467-D71527CCAB75}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>cpp03functions</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
     <ProjectName>cpp04_functions</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
