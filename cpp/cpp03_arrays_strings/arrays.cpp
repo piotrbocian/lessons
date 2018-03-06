@@ -3,7 +3,7 @@
 #include <iostream>
 
 #include <array>        // naglowek dla std::array
-#include <vector>        // naglowek dla std::vector
+#include <vector>       // naglowek dla std::vector
 #include <algorithm>    // naglowek dla funkcji operujacych na zbiorach danych
                         // np. std::fill, std::generate, std::sort
 
@@ -65,6 +65,27 @@ void cpp02_array()
 
 
     // Temat 2 - tablice wielowymiarowe
+
+    // tablice wielowymiarowe
+    int tab_2d[][5] = {
+        { 1, 2, 3, 0, 0 },
+        { 4, 5, 6, 7, 8 }
+    };
+
+
+    // tabliczka mnozenia
+    // zdefiniuj tablice[20][20]
+    // wypelnij tablice 20x20 wartosciami tabliczki mnozenia
+    {
+        int tab[20][20];
+        for (int i = 0; i < 20; i++)
+        {
+            for (int j = 0; j < 20; j++)
+            {
+                tab[i][j] = i*j;
+            }
+        }
+    }
 
 
     // Temat 3 - std::array
