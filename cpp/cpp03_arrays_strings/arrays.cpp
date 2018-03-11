@@ -1,3 +1,6 @@
+// Copyright 2018 Piotr Bocian
+// Opracowanie Piotr Bocian
+
 #include "stdafx.h"
 
 #include <iostream>
@@ -9,7 +12,7 @@
 
 using namespace std;
 
-void cpp02_array()
+int main()
 {
     // Temat 1 - tablice jednowymiarowe
     // tablice definiujemy podajac typ nazwe oraz liczbe elementow
@@ -134,5 +137,7 @@ void cpp02_array()
 
     // Zadanie dla studentów:
     // https://www.hackerrank.com/challenges/vector-erase/problem
+
+    return 0;
 }
 
