@@ -1,5 +1,5 @@
-// cpp01.cpp : Defines the entry point for the console application.
-//
+// Copyright 2018 Piotr Bocian
+// Opracowanie Piotr Bocian
 
 #include "stdafx.h"
 
