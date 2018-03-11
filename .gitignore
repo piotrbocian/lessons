@@ -3,4 +3,5 @@ v15/
 Debug/
 Release/
 *.bak
+*.orig
 *.user

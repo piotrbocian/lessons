@@ -1,10 +1,17 @@
 // Copyright 2018 Piotr Bocian
 // Opracowanie Piotr Bocian
 
+// cpp01.cpp:
+// Temat 1 - wypisywanie tekstu na konsole
+// Temat 2 - zmienne
+// Temat 3 - wczytywanie danych z konsoli przy pomocy std::cin
+// Temat 4 - instrukcje warunkowe
+// Temat 5 - pêtle
+
 #include "stdafx.h"
 
-#include <stdio.h>  // C style
-#include <iostream> // C++ style
+#include <stdio.h>  // C style (printf)
+#include <iostream> // C++ style (cout/cin)
 
 #include <string>
 
@@ -12,13 +19,12 @@ using namespace std;
 
 int main()
 {
-
-
+    // Temat 1 - wypisywanie tekstu na konsole
     // C++ style
     std::cout << "hello" << std::endl;
-    cout << "hello" << endl;    // using namespace std;
-    cout << "Jestem Piotr, mam " << 31 << " lat" << endl;   // 31 is converted into string
-    cout << "Jestem nerdem, mam " << 0x1f << " lat" << endl;// 0x1f is also sonverted into string
+    cout << "hello" << endl;    // mo¿emy pomin¹æ std:: dziêki linijce (11) using namespace std;
+    cout << "Jestem Piotr, mam " << 31 << " lat" << endl;   // 31 jest konwertowane na tekst (string)
+    cout << "Jestem nerdem, mam " << 0x1f << " lat" << endl;// 0x1f jest konwertowane na tekst i efekt dzia³ania bêdzie identyczny jak powy¿ej
 
 
     // C style
@@ -27,6 +33,9 @@ int main()
     printf("Jestem Piotr, mam %i lat\n", 31);   // http://www.cplusplus.com/reference/cstdio/printf/
 
 
+    // Temat 2 - zmienne
+    // przyk³ady deklaracji zmiennych
+    // oraz u¿ycie operatora sizeof() do sprawdzenia ile bajtów ma dany typ
     {
         bool b1 = true, b2 = false;
         char c1 = 1, c2 = '1', c3 = 0x1, c4 = 'a', c5 = 0xa;          // 1 byte
@@ -51,7 +60,9 @@ int main()
         cout << "f1 = " << f1 << ", f2 = " << f2 << endl;
 
 
-        // signed / unsigned
+        // signed - liczby "ze znakiem" czyli dodatnie i ujemne
+        // signed jest domyœlne czyli: int a = signed int a
+        // unsigned - liczby "bez znaku" czyli tylko dodatnie
         unsigned short int us = s2;
         cout << "signed short = " << s2 << ", unsigned short = " << us << endl;
 
@@ -63,8 +74,8 @@ int main()
         //C = 5;    // error
 
     }
-    // 1> 2>
 
+    // Temat 3 - wczytywanie danych z konsoli przy pomocy std::cin
     cout << "Podaj swoje imie: ";
     string imie;
     cin >> imie;
@@ -76,28 +87,32 @@ int main()
     cout << "Jestem " << imie << ", mam " << wiek << " lat" << endl;
 
 
+
     // cwiczenie 1
-    // Napisz program ktory spyta o dane i policzy
-    // 1) BMI
-    // 2) kW -> KM
-    // 3) kurs $/€/z³
+    // Napisz program ktory spyta o dane i przeliczy PLN na USD/EUR
+    {
+        cout << "Ile masz PLN?";
+        float pln;
+        cin >> pln;
 
-    cout << "Ile masz PLN?";
-    float pln;
-    cin >> pln;
+        const float USD_PLN = 3.36f;
+        const float EUR_PLN = 4.15f;
 
-    const float USD_PLN = 3.36f;
-    const float EUR_PLN = 4.15f;
+        cout << "Masz " << pln / USD_PLN << "USD / " << pln / EUR_PLN << "EUR" << endl;
+    }
 
-    cout << "Masz " << pln / USD_PLN << "USD / " << pln / EUR_PLN << "EUR" << endl;
-
-    // if
+    // Temat 4 - instrukcje warunkowe
     if (wiek >= 18)
-        cout << "moge pic alkohol" << endl;
-    cout << "moge chodzic na imprezy" << endl;  // czêsty b³¹d u pocz¹tkuj¹cych!!! uwaga na kolokwium
+        cout << "moge kupic alkohol" << endl;
+    cout << "moge zrobic prawojazdy" << endl;  // czêsty b³¹d u pocz¹tkuj¹cych!!! (uwaga na kolokwium)
+    // po sprawdzeniu warunku w if() wykonana jest TYLKO jedna nastêpna instrukcja
+    // jesli chcemy wykonac wiecej instrukcji, musz¹ byæ zawarte w { }
+    if (wiek >= 18)
+    {
+        cout << "moge kupic alkohol" << endl;
+        cout << "moge zrobic prawojazdy" << endl;
+    }
 
-    // else-if
-    // else
 
     // cwiczenie 2
     // Napisz program wczytujacy 3 liczby calkowite i wypisujacy liczbe najwieksza
@@ -111,39 +126,38 @@ int main()
         cout << max;
     }
 
-    /*
-    string zdanie;
-    cout << "Co masz do powiedzenia?";
-    getline(cin, zdanie);
-    getline(cin, zdanie);
-    */
 
-    //cout << "powiem wam, ze " << zdanie;
-
-
-    cerr << "O kurde, cos poszlo nie tak!" << endl;
-
-
-    // int j albo zamkn¹æ w klamerki
+    // Temat 5 - pêtle
     cout << "for loop";
     {
         int i;
-        for (i = 0; i < 10; i++)    // for (i = 3; i < 10; i++, cout << "!" << endl)
+        for (i = 0; i < 10; i++)
             cout << i << endl;
         cout << i*i << endl;        // czêsty b³¹d u pocz¹tkuj¹cych!!! uwaga na kolokwium
+        // podobnie jak w instrukcji if(),
+        // po wykonaniu operacji w nawiasach for(;;) wykonana jest TYLKO jedna nastêpna instrukcja
+        // jesli chcemy wykonac wiecej instrukcji, musz¹ byæ zawarte w { }
+        for (i = 0; i < 10; i++)
+        {
+            cout << i << endl;
+            cout << i*i << endl;
+        }
     }
 
 
     // while / do-while
     cout << "while loop";
-    int i = 0;
-    while (i < 10)
     {
-        cout << i << endl;
-        i++;
+        int i = 0;
+        while (i < 10)
+        {
+            cout << i << endl;
+            i++;
+        }
     }
 
 
+    // Cwiczenie - policz sume liczb od 1 do 100
     {
         int i = 0;
         int sum = 0;
@@ -153,34 +167,26 @@ int main()
         cout << "Suma liczb od 1 do 100 = " << sum << endl;
     }
 
-    cout << "-----------------------" << endl;
 
+    // Cwiczenie - sprawdz czy liczba jest pierwsza
+    // liczba pierwsza - liczba, ktora dzieli sie tylko przez 1 i przez sam¹ siebie
     {
-        int start = 1;
-        int stop = 10000;
-        int i = 0;
-        int sum = 0;
-        for (i = start; i <= stop; i = i + 1) // int i; i += 1; i++;
-            sum = sum + i;  // sum += i;
-
-        cout << "Suma liczb od " << start << " "<< stop <<" = " << sum << endl;
+        int chybaLiczbaPierwsza = 104708;
+        bool czyNaPewno = true;
+        // czy jest liczb¹ pirwsz¹
+        for (int i = 2; i < chybaLiczbaPierwsza; i++)
+        {
+            if (chybaLiczbaPierwsza % i == 0)
+                czyNaPewno = false;
+        }
+        if (czyNaPewno)
+            cout << "liczba pierwsza" << endl;
+        else
+            cout << "NIE" << endl;
     }
 
-
-    int chybaLiczbaPierwsza = 104708;
-    bool czyNaPewno = true;
-    // czy jest liczb¹ pirwsz¹
-    for (int i = 2; i < chybaLiczbaPierwsza; i++)
-    {
-        if (chybaLiczbaPierwsza % i == 0)
-            czyNaPewno = false;
-    }
-    if (czyNaPewno)
-        cout << "liczba pierwsza" << endl;
-    else
-        cout << "NIE" << endl;
-
-
+    // Zagniezdzone pêtle
+    // Cwiczenie - wypisz liczby od 1 do 10 zgodnie ze wzorem:
     // 1
     // 12
     // ...
@@ -195,41 +201,22 @@ int main()
     }
 
     
-    // liczby pierwsze
+    // Cwiczenie - wypisz wszystkie liczby pierwsze od 2 do 10000
     {
-        for (int i = 1; i < 10000; i++)
+        for (int i = 2; i < 10000; i++)
         {
-            bool isPrime = true;
+            bool czyPierwsza = true;
             for (int j = 2; j < i; j++)
             {
                 if (i % j == 0)
                 {
-                    isPrime = false;
+                    czyPierwsza = false;
                     break;
                 }
             }
-            if (isPrime)
+            if (czyPierwsza)
                 cout << i << endl;
         }
     }
-    
-
-
-
-    // randoms
-    // 1. najpierw wypisac i niech ka¿dy powie co wysz³o
-    // 2. æwiczenie z rozk³adem
-    int randoms[10] = { 0 };
-    for (int i = 0; i<1000000; i++)
-    {
-        int r = rand() % 10;
-        randoms[r]++;
-    }
-    for (int i = 0; i < 10; i++)
-    {
-        cout << "randoms[" << i << "]: " << randoms[i] << endl;
-    }
-
-    return 0;
 }
 
