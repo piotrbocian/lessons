@@ -26,6 +26,24 @@ int vector_sort() {
     return 0;
 }
 
+int vector_sort_new_int() {
+    int n;
+    cin >> n;
+    int *v = new int[n];
+    for (int i=0; i<n; i++)
+    {
+        cin >> v[i];
+    }
+    sort(v, v+n);
+    for (int i=0; i<n; i++)
+    {
+        cout << v[i] << " ";
+    }
+    delete[] v;
+    return 0;
+}
+
+
 // https://www.hackerrank.com/challenges/vector-erase/problem
 int vector_erase() {
     vector<int> v;
