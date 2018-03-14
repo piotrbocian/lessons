@@ -1,3 +1,6 @@
+// Copyright 2018 Piotr Bocian
+// Opracowanie Piotr Bocian
+
 // cpp01.cpp:
 // Temat 1 - wypisywanie tekstu na konsole
 // Temat 2 - zmienne
