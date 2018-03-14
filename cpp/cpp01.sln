@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cpp01_hello_world", "cpp01\cpp01.vcxproj", "{59A03CE1-0E0B-40A3-8786-0080D8077F9B}"
 EndProject
@@ -14,6 +14,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cpp03_functions", "cpp04_functions\cpp04_functions.vcxproj", "{A7716B8C-C613-4E01-B467-D71527CCAB75}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cpp04_strings", "cpp04_strings\cpp04_strings.vcxproj", "{E4DBBF9E-3B02-43A4-80F9-FD4D353476FC}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "password", "password\password.vcxproj", "{FE24CB21-247E-44F3-BEB0-2AAE94684DE1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -71,6 +73,14 @@ Global
 		{E4DBBF9E-3B02-43A4-80F9-FD4D353476FC}.Release|x64.Build.0 = Release|x64
 		{E4DBBF9E-3B02-43A4-80F9-FD4D353476FC}.Release|x86.ActiveCfg = Release|Win32
 		{E4DBBF9E-3B02-43A4-80F9-FD4D353476FC}.Release|x86.Build.0 = Release|Win32
+		{FE24CB21-247E-44F3-BEB0-2AAE94684DE1}.Debug|x64.ActiveCfg = Debug|x64
+		{FE24CB21-247E-44F3-BEB0-2AAE94684DE1}.Debug|x64.Build.0 = Debug|x64
+		{FE24CB21-247E-44F3-BEB0-2AAE94684DE1}.Debug|x86.ActiveCfg = Debug|Win32
+		{FE24CB21-247E-44F3-BEB0-2AAE94684DE1}.Debug|x86.Build.0 = Debug|Win32
+		{FE24CB21-247E-44F3-BEB0-2AAE94684DE1}.Release|x64.ActiveCfg = Release|x64
+		{FE24CB21-247E-44F3-BEB0-2AAE94684DE1}.Release|x64.Build.0 = Release|x64
+		{FE24CB21-247E-44F3-BEB0-2AAE94684DE1}.Release|x86.ActiveCfg = Release|Win32
+		{FE24CB21-247E-44F3-BEB0-2AAE94684DE1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
