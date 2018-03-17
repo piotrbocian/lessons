@@ -1,161 +1,125 @@
-// A Hello World! program in C#.
+// Opracowanie Piotr Bocian 2018
+// Copyright 2018 Piotr Bocian
+
 using System;
 using System.Linq;
 using System.Threading;
 
 namespace HelloWorld
 {
-    // everything is object
     class Hello 
     {
-        // program entry point
-        static void Main() 
+        static void Main(string[] args)
         {
-            // 1. print and close window
-            Console.WriteLine("Hello World!");
+            // Temat 1 - wypisywanie tekstu na konsole
+            Console.WriteLine("hello");
+            Console.WriteLine("Jestem Piotr, mam " + 31 + " lat");   // 31 jest konwertowane na tekst (string)
+            Console.WriteLine("Jestem nerdem, mam " + 0x1f + " lat");// 0x1f jest konwertowane na tekst i efekt działania będzie identyczny jak powyżej
+            Console.WriteLine("Jestem Piotr, mam {0} lat", 31);
 
-            // 2. Keep the console window open in debug mode.
-            // alternatively - run w/o debugging
-            //Console.WriteLine("Press any key to exit.");
-            //Console.ReadKey();
-
-
-            // 3. use variable
+            // Temat 2 - zmienne
+            // przykłady deklaracji zmiennych
+            // oraz użycie operatora sizeof() do sprawdzenia ile bajtów ma dany typ
             {
-                string imie = "Piotr";
-                string nazwisko = "Bocian";
-                Console.WriteLine("Prowadzący: " + imie + " " + nazwisko);
+                bool b1 = true, b2 = false;
+                byte by1 = 1, by2 = 0xf;
+                char c1 = '1', c2 = 'a';          // 1 byte
+                short s1 = 32767; short s2 = -100; short s3 = 0x1234;    // 2 bytes
+                int i = 2147483647;               // 4 bytes
+                long l1 = 2147483647; long l2 = 0;// 8 bytes
+                float f1 = 167.899f, f2 = 124e4f;   // 4 bytes
+                double d1 = 123.23;                 // 8 bytes
+
+                Console.WriteLine("size of bool: {0}", sizeof(bool));
+                Console.WriteLine("size of char: {0}", sizeof(char));
+                Console.WriteLine("size of short: {0}", sizeof(short));
+                Console.WriteLine("size of int: {0}", sizeof(int));
+                Console.WriteLine("size of long: {0}", sizeof(long));
+                Console.WriteLine("size of float: {0}", sizeof(float));
+
+                // const
+                int c = 300000;
+                const int C = 300000;
+
+                c = 4;
+                //C = 5;    // błąd - nie można ponownie przypisać do stałej
+
             }
 
+            // Temat 3 - wczytywanie danych z konsoli przy pomocy std::cin
+            Console.WriteLine("Podaj swoje imie: "); ;
+            string imie = Console.ReadLine();
+
+            Console.WriteLine("Podaj wiek: ");
+            int wiek = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Jestem {0}, mam {1} lat", imie, wiek);
+
+
+            // Cwiczenie 1
+            // Napisz program ktory spyta o dane i przeliczy PLN na USD/EUR
+
+
+            // Temat 4 - instrukcje warunkowe
+            if (wiek >= 18)
+                Console.WriteLine("moge honorowo oddac krew");
+            Console.WriteLine("moge zrobic prawo jazdy");   // częsty błąd u początkujących!!!
+                                                            // po sprawdzeniu warunku w if() wykonana jest TYLKO jedna następna instrukcja
+                                                            // jesli chcemy wykonac wiecej instrukcji, muszą być zawarte w { }
+            if (wiek >= 18)
             {
-                string imie = "Jan";
-                string nazwisko = "Kowalski";
-                Console.WriteLine("Student: {0} {1}", imie, nazwisko);
+                Console.WriteLine("moge honorowo oddac krew");
+                Console.WriteLine("moge zrobic prawo jazdy");
             }
 
-            Console.WriteLine(123);
-            var c = 7;
-            Console.WriteLine(c);
+
+            // Cwiczenie 2
+            // Napisz program wczytujacy 3 liczby calkowite i wypisujacy liczbe najwieksza
 
 
-
-            int[] numbers = {2, 5, 4, 34, 53125, 424245, 1352145, 252, 24, 24, 24};
-
-            Console.WriteLine(findMax1(numbers));
-            Console.WriteLine(findMax2(numbers));
-            Console.WriteLine(findMax3(numbers));
-            Console.WriteLine(findMax4(numbers));
-            Console.WriteLine(findMax5(numbers));
-            
-
-            Console.WriteLine(InWords(234));
-
-            Drive();
-
-            ReadAndSum();
-
-        }
-
-
-        // function with error to debug
-        static int findMax1(int[] tab)
-        {
-            int max = tab[0];
-            for (int i = 1; i < tab.Length; i++)
+            // Temat 5 - pętle
+            Console.WriteLine("for loop");
             {
-                if (max > tab[i])
+                int i;
+                for (i = 0; i < 10; i++)
+                    Console.WriteLine(i);
+                Console.WriteLine(i * i);        // częsty błąd u początkujących!!!
+                                                 // podobnie jak w instrukcji if(),
+                                                 // po wykonaniu operacji w nawiasach for(;;) wykonana jest TYLKO jedna następna instrukcja
+                                                 // jesli chcemy wykonac wiecej instrukcji, muszą być zawarte w { }
+                for (i = 0; i < 10; i++)
                 {
-                    max = tab[i];
+                    Console.WriteLine(i);
+                    Console.WriteLine(i * i);
                 }
             }
-            return max;
-        }
-        
-        static int findMax2(int[] tab)
-        {
-            int max = tab[0];
 
-            foreach (int t in tab)
+
+            // while / do-while
+            Console.WriteLine("while loop");
             {
-                if (max < t)
+                int i = 0;
+                while (i < 10)
                 {
-                    max = t;
+                    Console.WriteLine(i);
+                    i++;
                 }
             }
 
-            return max;
-        }
 
-        static int findMax3(int[] tab)
-        {
-            int max = tab[0];
-
-            foreach (int t in tab)
+            // Przyklad - policz sume liczb od 1 do 100
             {
-                max = Math.Max(max, t);
+                int i = 0;
+                int sum = 0;
+                for (i = 1; i <= 100; i = i + 1)
+                    sum = sum + i;
+
+                Console.WriteLine("Suma liczb od 1 do 100 = {0}", sum);
             }
 
-            return max;
-        }
 
-        static int findMax4(int[] tab)
-        {
-            // using System.Linq;
-            return tab.Max();
-        }
-
-        static int findMax5(int[] tab)
-        {
-            Array.Sort(tab);
-            return tab[tab.Length - 1];
-        }
-
-        // sort
-        // other table properties
-
-        static string InWords(int n)
-        {
-            string[] hundreds = {"", "sto", "dwieście", "trzysta", "czterysta", "pięćset", "sześćset", "siedemset", "osiemset", "dziewięćset"};
-            string[] dozens = {"", "dziesięć", "dwadzieścia", "trzydzieści", "czterdzieści", "pięćdziesiąt", "szcześćdziesiąt", "siedemdziesiąt", "osiemdziesiąt", "dziewięćdziesiąt" };
-            string[] units = { "", "jeden", "dwa", "trzy", "cztery", "pięć", "sześć", "siedem", "osiem", "dziewięć" };
-
-            int h = n/100;
-            int d = (n - (100*h))/10;
-            int u = n % 10;
-
-            return hundreds[h] + " " + dozens[d] + " " + units[u];
-        }
-
-        static int ReadAndSum()
-        {
-            string line;
-            do
-            {
-                line = Console.ReadLine();
-                Console.WriteLine(line.ToUpper());
-            }
-            while (line != "koniec");
-
-            return 0;
-        }
-
-
-        static void Drive()
-        {
-            Console.Write("__________________________________________");
-
-            Console.SetCursorPosition(0, Console.CursorTop);
-
-            Console.CursorVisible = false;
-            for (int i=0; i<40; i++)
-            {
-                Console.Write("_");
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write("o-o");
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.SetCursorPosition(Console.CursorLeft - 3, Console.CursorTop);
-                Thread.Sleep(100);
-            }
+            // Cwiczenie - sprawdz czy liczba jest pierwsza
+            // liczba pierwsza - liczba, ktora dzieli sie tylko przez 1 i przez samą siebie
         }
     }
 }
