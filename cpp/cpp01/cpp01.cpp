@@ -17,7 +17,7 @@
 
 using namespace std;
 
-int main()
+int main2()
 {
     // Temat 1 - wypisywanie tekstu na konsole
     // C++ style
@@ -218,5 +218,7 @@ int main()
                 cout << i << endl;
         }
     }
+
+    return 0;
 }
 
