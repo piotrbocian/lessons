@@ -20,15 +20,16 @@ public:
     // 22- 2 x podwojne
     // 21- podwojne + pojedyncze
     int lozka;
-    float cena;
-    bool zajety;
-    string nazwiskoGoscia;
 
-    Pokoj()
-    {
-        zajety = false;
-        nazwiskoGoscia = "";
-    }
+    // cena pokoju za noc
+    float cena;
+
+    // true - pokój jest zajety
+    // false - pokój jest wolny
+    bool zajety;
+
+    // nazwisko goœcia zameldowanego w pokoju
+    string nazwiskoGoscia;
 
     Pokoj(int standard, int lozka, float cena)
     {
@@ -39,6 +40,14 @@ public:
         this->nazwiskoGoscia = "";
     }
 
+    // Poniewa¿ jest zdefiniowany nie-domyœlny konstruktor
+    // to musimy dodaæ jeszcze konstruktor domyœlny aby program siê skompilowa³.
+    // Mo¿na tego oczywiœcie unikn¹æ - pokazaæ jak.
+    Pokoj()
+    {
+    }
+
+    // wypisz informacje o pokoju
     void wypisz()
     {
         cout << setw(5) << standard << setw(5) << lozka << setw(10) << cena;
@@ -70,5 +79,5 @@ public:
             cout << "W pokoju nikt nie jest zameldowany!" << endl;
         }
     }
-};
 
+};  // pamiêtajmy o œredniku na koñcu deklaracji klasy
