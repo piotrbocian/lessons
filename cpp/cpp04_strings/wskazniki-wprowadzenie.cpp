@@ -18,9 +18,8 @@ void zwieksz_o_100(int &a)
     a += 100;
 }
 
-
-int main(int argc, char *argv[])
-{
+int main()
+{ 
     // deklarujemy wskaznik 'p_a' jako zmienna pokazujaca na adres pamieci pod ktorym jest zmienna 'a'
     {
         int a = 5;
@@ -142,88 +141,12 @@ int main(int argc, char *argv[])
     // 1) uzywajac indeksowania []
     // 2) uzywajac przesuniecia wskaznika
     // Zmierz czas obu operacji (http://en.cppreference.com/w/cpp/chrono)
-
-
-
-
-    // tablice znakow
-    // wczesniej do pracy z tekstami uzywalismy obiektu std::string
-    cout << "Podaj swoje imie: ";
-    string imie;
-    cin >> imie;
-    cout << imie << endl;
-
-    // ale nie zawsze mozemy go uzyc i musimy bazowac na starszym mechanizmie:
-    // C-strings
-    char c_tekst[] = "tekst w C";
-    cout << c_tekst << ", sizeof = " << sizeof(c_tekst) << ", length = " << strlen(c_tekst) << endl;
-    char c_tekst2[] = { 't', 'e', 'k', 's', 't', ' ', 'w', ' ', 'C', 0 }; // null terminator!
-
-    // deklaracja za pomoca wskaznika const char*
-    const char *p_tekst = "inny tekst w C"; // dlaczego tutaj mus byc const?
-
-    {
-        char imie_nazwisko[100];
-        char imie[] = "Piotr";
-        char nazwisko[] = "Bocian";
-
-        // nie skompiluja sie bez dyrektywy _CRT_SECURE_NO_WARNINGS
-        //strcat(imie_nazwisko, imie);
-        //strcat(imie_nazwisko, nazwisko);
-        //strcmp()
-        //strlen()
-        //strcpy()
-    }
-
-    // tablica wskaznikow
-    const char *miasta[] = { "Gdansk", "Gdynia", "Sopot" };
-
-    // parametry wejsciowe programu
-    {
-        cout << "Liczba przekazanych argumentow: " << argc << endl;
-        for (int i = 0; i < argc; i++)
-        {
-            cout << argv[i] << endl;
-        }
-    }
-
-
-    // Zadanie
-    // napisz program ktory policzy znaki ([a-z][A-Z][0-9]) w slowach podanych jako argumenty programu
-    // (bez argumentu nr 0, ktorym jest nazwa programu)
-    // np. po uruchomieniu:
-    //   program.exe Jas mama
-    // powinien wypisac
-    // (kolejnosc znakow dowolna)
-    //   jas
-    //   a: 1
-    //   s: 1
-    //   J: 1
-    //   mama
-    //   a: 2
-    //   m: 2
-
-    // jeszcze raz std::strings- 
-    // zalecony format do pracy z tekstem ale czasami nie mamy wyboru
-    {
-        std::string tekst = "tekst w C++";
-        std::wstring w_tekst = L"tekst w C++";
-        cout << tekst << endl;
-        wcout << w_tekst << endl;
-
-        cout << tekst << ", sizeof = " << sizeof(tekst) << ", length = " << tekst.length() << endl;
-
-        // binary operators
-        if (tekst == "tekst w C++")
-        {
-            cout << "takie same" << endl;
-        }
-
-        string nowy_tekst = tekst + ", ale troche inny";
-
-        cout << tekst << endl << nowy_tekst << endl;
-    }
-
+    /*
+    UWAGA - Kompilator ma okreœlony limit dostêpnej pamiêci na stosie (ile mog¹ zaj¹æ wszystkie zmienne lokalne programu, w tym du¿a tablica z tego zadania.
+    W przypadku Visual Studio jest to domyœlnie 1MB. Zaalokowanie wiêkszej tablicy np.
+    int tab[1000000]; // sizeof(tab) = sizeof(int) * 1000000 ~= 4MB
+    spowoduje b³¹d stack overflow!
+    */
 
     return 0;
 }

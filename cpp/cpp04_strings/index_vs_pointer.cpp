@@ -18,6 +18,12 @@ void index_vs_array()
     // 1) uzywajac indeksowania []
     // 2) uzywajac przesuniecia wskaznika
     // Zmierz czas obu operacji (http://en.cppreference.com/w/cpp/chrono)
+    /*
+    UWAGA - Kompilator ma okreœlony limit dostêpnej pamiêci na stosie (ile mog¹ zaj¹æ wszystkie zmienne lokalne programu, w tym du¿a tablica z tego zadania.
+    W przypadku Visual Studio jest to domyœlnie 1MB. Zaalokowanie wiêkszej tablicy np.
+    int tab[1000000]; // sizeof(tab) = sizeof(int) * 1000000 ~= 4MB
+    spowoduje b³¹d stack overflow!
+    */
 
     int tab[SIZE];
 

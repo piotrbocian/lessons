@@ -66,12 +66,15 @@ void wsk2()
         delete[] dynamiczna;
     }
 
-    // sprawdz ile maksymalnie pamiêci uda siê zaalokowaæ w œrodowisku x86 (32 bity)
+    // sprawdz ile maksymalnie pamiêci uda siê zaalokowaæ w trybie x86 (32 bity)
     for (int i = 1; ; i++)
     {
         new char[1024 * 1024];
         cout << i << " MB!" << endl;
     }
+    // a ile w trybie x64?
+    // Przypomnienie - a ile mo¿na bylo zaalokowac na stosie?
+
     // Zadanie
     // Vector-Sort raz jeszcze
     // https://www.hackerrank.com/challenges/vector-sort/problem
