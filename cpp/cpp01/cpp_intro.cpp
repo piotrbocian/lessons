@@ -89,7 +89,7 @@ int main()
 
 
     // Cwiczenie 1
-    // Napisz program ktory spyta o dane i przeliczy PLN na USD/EUR
+    // Napisz program ktory spyta o kwote i przeliczy PLN na USD/EUR
 
 
 
@@ -114,7 +114,7 @@ int main()
     cout << "for loop";
     {
         int i;
-        for (i = 0; i < 10; i++)
+        for (i = 0; i < 10; i++)    // i++ to to samo co i = i + 1
             cout << i << endl;
         cout << i*i << endl;        // czêsty b³¹d u pocz¹tkuj¹cych!!!
         // podobnie jak w instrukcji if(),
@@ -145,8 +145,9 @@ int main()
         int i = 0;
         int sum = 0;
         for (i = 1; i <= 100; i = i + 1)
+        {
             sum = sum + i;
-
+        }
         cout << "Suma liczb od 1 do 100 = " << sum << endl;
     }
 

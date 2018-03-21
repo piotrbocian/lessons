@@ -45,3 +45,14 @@ void zwieksz(int t[], int liczba_elementow)
     }
 }
 
+// przy std::array mozemy liczbe elementow zadeklarowac inaczej
+void zwieksz(std::array<int, 12> tab)
+{
+    for (int t : tab)
+    {
+        cout << t;
+    }
+
+    tab.size();
+}
+

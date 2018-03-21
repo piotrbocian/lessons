@@ -177,7 +177,10 @@ int main2()
         for (int i = 2; i < chybaLiczbaPierwsza; i++)
         {
             if (chybaLiczbaPierwsza % i == 0)
+            {
                 czyNaPewno = false;
+                break;
+            }
         }
         if (czyNaPewno)
             cout << "liczba pierwsza" << endl;

@@ -14,7 +14,11 @@ using namespace std;
 // argv[] - tablica wskaznikow na parametry programu:
 //   argv[0] - nazwa pliku .exe
 //   argv[i] - kolejne przekazane parametry
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
+// Uwaga na inne formaty:
+//int _tmain(int argc, _TCHAR* argv[])
+//int wmain(int argc, wchar_t* argv[])
+// https://stackoverflow.com/questions/895827/what-is-the-difference-between-tmain-and-main-in-c
 { 
     // std::string - typ do obslugi napisow w bibliotece standardowej C++
     {
