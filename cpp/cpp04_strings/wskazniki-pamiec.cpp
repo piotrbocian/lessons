@@ -4,12 +4,62 @@
 #include <iostream>
 using namespace std;
 
-void wsk2()
+struct MojaStruktura
 {
+    MojaStruktura()
+    {
+        cout << "konstruktor - utworzenie MojeStruktura" << endl;
+    }
+    ~MojaStruktura()
+    {
+        cout << "destruktor - usuniecie MojaSturktura" << endl;
+    }
+};
+
+void wskazniki_pamiec()
+{
+    // co oznaczaj¹ poni¿sze instrukcje?
+    {
+        int a1;             // niezainicjowana zmienna na stosie
+        int a2 = 2;         // zainicjowana zmienna na stosie 
+        int a3(3);          // inna forma inicjalizacji zmiennej na stosie
+
+        int *b1;            // niezainicjowana zmienna wskaŸnikowa na stosie
+        int *b2 = &a1;      // zainicjowana zmienna wskaŸnikowa na stosie
+
+        new int;            // niezainicjowana zmienna int na stercie
+        new int();          // zainicjowana zerem zmienna int na stercie
+        new int(5);         // zainicjowana zmienna int na stercie
+        b1 = new int(4);    // przypisanie do zmiennej wskaŸnikowej adresu zmiennej ze sterty
+
+        // W C++ mo¿emy decydowaæ które zmienne/obiekte deklarowane s¹ na stosie ('stack'),
+        // a które na stercie ('heap').
+
+        // czas ¿ycia obiektów na STOSIE - do koñca zakresu {}
+        // czas ¿ycia obiektów na STERCIE - do czasu ich zwolnienia
+    }
+
+    // Czy to oznacza, ¿e mo¿emy teraz skorzystaæ z a4?
+    //cout << a4;
+    // Nie- obiekt new int(4) zosta³ zadeklarowany co prawda na stercie,
+    // ale wskaŸnik do niego by³ "tylko" na stosie.
+
+    // Dla niedowiarków
+    {
+        MojaStruktura ms;
+    }
 
     {
-        int *aa = new int(5);
-        delete aa;
+        MojaStruktura * ms = new MojaStruktura();
+    }
+
+
+    {
+        int a_stos = 5;
+
+        int *a_sterta = new int(5);
+        delete a_sterta;
+
     }
 
     // TODO - jak pokazaæ ¿e trzeba uwa¿aæ na a?
