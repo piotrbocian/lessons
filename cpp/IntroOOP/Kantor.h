@@ -34,3 +34,16 @@ private:
     float EUR_PLN;
     float SPREAD;
 };
+
+void main()
+{
+    Kantor k(3.40, 4.30);
+    float pln = 100;
+    float usd = k.kupUsd(usd);
+    pln = k.sprzedajUsd(usd);
+
+    float eur = k.kupEur(pln);
+    pln = k.sprzedajEur(eur);
+
+    float zarobek = 100 - pln;
+}
