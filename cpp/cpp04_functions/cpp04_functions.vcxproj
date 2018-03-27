@@ -159,6 +159,7 @@
     <ClCompile Include="funkcje.cpp" />
     <ClCompile Include="silnia.cpp" />
     <ClCompile Include="temp.cpp" />
+    <ClCompile Include="temp_blednie.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -37,4 +37,6 @@ int main(int argc, char *argv[])
 
     funkcja(1, 2, 3, 4);
     funkcja(23, 34, 45, 56);
+
+    return 0;
 }
