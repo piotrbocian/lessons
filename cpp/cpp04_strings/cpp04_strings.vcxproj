@@ -154,6 +154,7 @@
     <ClCompile Include="index_vs_pointer.cpp" />
     <ClCompile Include="strings.cpp" />
     <ClCompile Include="wskazniki-pamiec.cpp" />
+    <ClCompile Include="wskazniki-sizeof.cpp" />
     <ClCompile Include="wskazniki-wprowadzenie.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
