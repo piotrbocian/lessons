@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "funkcje.h"
 
+#include <array>
 #include <iostream>
 using namespace std;
 
