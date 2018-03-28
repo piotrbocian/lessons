@@ -2,6 +2,8 @@
 // Opracowanie Piotr Bocian
 
 #include <iostream>
+#include <ctime>
+
 using namespace std;
 
 struct MojaStruktura
@@ -16,8 +18,14 @@ struct MojaStruktura
     }
 };
 
-void wskazniki_pamiec()
+int* lotto1();
+int* lotto2();
+void wypiszWyniki(int wyniki[]);
+
+void main()
 {
+    // Wstêp - czas ¿ycia vs zakres wa¿noœci
+
     // co oznaczaj¹ poni¿sze instrukcje?
     {
         int a1;             // niezainicjowana zmienna na stosie
@@ -40,11 +48,11 @@ void wskazniki_pamiec()
     }
 
     // Czy to oznacza, ¿e mo¿emy teraz skorzystaæ z a4?
-    //cout << a4;
+    // cout << a4;
     // Nie- obiekt new int(4) zosta³ zadeklarowany co prawda na stercie,
-    // ale wskaŸnik do niego by³ "tylko" na stosie.
+    // ale wskaŸnik do niego by³ "tylko" na stosie i zosta³ ju¿ zwolniony
 
-    // Dla niedowiarków
+    // Dla niedowiarków - konstruktor i destruktor da znaæ kiedy siê wywo³a
     {
         MojaStruktura ms;
     }
@@ -53,49 +61,38 @@ void wskazniki_pamiec()
         MojaStruktura * ms = new MojaStruktura();
     }
 
-
+    // Do usuwania obiektów na stercie u¿ywamy operatora delete
     {
-        int a_stos = 5;
+        int *a = new int(5);
+        delete a;
 
-        int *a_sterta = new int(5);
-        delete a_sterta;
+        // wywo³anie delete po raz drugi najprawdopodobniej spowoduje b³¹d pamiêci
+        //delete a;
 
+        // dlatego zawsze bezpiecznie po skasowaniu obiektu ustawiæ wskaŸnik na nullptr
+        a = nullptr;    // u¿ywajmy nullptr zamiast NULL
+        // teraz mo¿emy kasowaæ bezpiecznie bo delete na nullptr nic nie robi
+        delete a;
     }
 
-    // TODO - jak pokazaæ ¿e trzeba uwa¿aæ na a?
-    // czas ¿ycia obiektów
-    int *p_a;
-    int *p_b;
+    // Wyciek pamiêci
+    // Zademonstrujmy problem u¿ywaj¹c dwóch zmiennych typu char
+    // symbolizuj¹cych baloniki z helem z cyframi '1' oraz '8'
     {
-        int a = 5;
-        p_a = &a;
-        p_b = new int(7);
+        // zadeklarujmy dwie zmienne typu int u¿ywaj¹c operatora new
+        char *czerwony_balonik_z_helem = new char('1');
+        char *zielony_balonik_z_helem = new char('8');
 
-        cout << "p_a = " << p_a << ", *p_a = " << *p_a << endl;
-        cout << "p_b = " << p_b << ", *p_b = " << *p_b << endl;
+        cout << "*czerwony = " << *czerwony_balonik_z_helem << ", *zielony = " << *zielony_balonik_z_helem << endl;
+
+        // teraz przepnijmy jeden wskaŸnik do drugiego
+        zielony_balonik_z_helem = czerwony_balonik_z_helem;
+
+        cout << "*czerwony = " << *czerwony_balonik_z_helem << ", *zielony = " << *zielony_balonik_z_helem << endl;
+        delete zielony_balonik_z_helem;
+        //delete czerwony_balonik_z_helem;   // czrwony pokazuje teraz na t¹ sam¹ pamiêæ co zielony, która zosta³a ju¿ zwolniona!!!
+        // a pamiêæ po czerwonym nie zosta³a zwolniona - wyst¹pi³ tzw WYCIEK PAMIÊCI ("MEMORY LEAK")
     }
-    cout << "p_a = " << p_a << ", *p_a = " << *p_a << endl;
-    cout << "p_b = " << p_b << ", *p_b = " << *p_b << endl;
-
-
-    // wyciek pamiêci
-    {
-        int *p_a;
-        int *p_b;
-
-        p_a = new int(5);
-        p_b = new int(7);
-
-        cout << "*p_a = " << *p_a << ", *p_b = " << *p_b << endl;
-
-        p_a = p_b;
-
-        cout << "*p_a = " << *p_a << ", *p_b = " << *p_b << endl;
-        delete p_a;
-        //delete p_b;   // p_b pokazuje teraz na pamiêæ p_a, która zosta³a ju¿ zwolniona!!!
-        // za to nie zwolniono pamiêci p_a - wyst¹pi³ tzw WYCIEK PAMIÊCI ("MEMORY LEAK")s
-    }
-
 
 
     // alokowanie dynamicznych tablic
@@ -105,18 +102,29 @@ void wskazniki_pamiec()
 
         // tablica dynamiczna alokowana - 
         // rozmiar mo¿e byæ podany w trakcie dzia³ania programu
-        int n = 100;
         int *dynamiczna = new int[100];
-        // zwróæ uwagê na ró¿nicê:
+
+        // zwróæ uwagê na ró¿nicê deklaracji tablicy vs pojedynczej zmiennej:
         int *tablica = new int[100];
         int *pojedyncza_zmienna = new int(100);
 
         // taka tablica MUSI zostaæ zwolniona kiedy przestaje byæ potrzebna
-        // w C++ nie ma Garbage Collectora!!!
+        // u¿ywamy operatora delete[]
         delete[] dynamiczna;
     }
 
-    // sprawdz ile maksymalnie pamiêci uda siê zaalokowaæ w trybie x86 (32 bity)
+    // Przyklad
+    // dwie funkcje zwracaj¹ce tablice z wynikami lotto
+    int *losowanie1 = lotto1();
+    wypiszWyniki(losowanie1);
+    
+    int *losowanie2 = lotto2();
+    wypiszWyniki(losowanie2);
+    delete[] losowanie2;
+    // Sprawdz wyniki. Czy obie funkcje s¹ poprawne?
+
+
+    // Zadanie - sprawdz ile maksymalnie pamiêci uda siê zaalokowaæ w trybie x86 (32 bity)
     for (int i = 1; ; i++)
     {
         new char[1024 * 1024];
@@ -129,4 +137,36 @@ void wskazniki_pamiec()
     // Vector-Sort raz jeszcze
     // https://www.hackerrank.com/challenges/vector-sort/problem
     // Tylko tym razem zamiast std::vector prosze uzyc dynamicznej tablicy (new int[])
+}
+
+// UWAGA - funkcja jest NIEPOPRAWNA i stanowi tylko przyk³ad niepoprawnego dzia³ania programu!
+int* lotto1()
+{
+    std::srand(std::time(nullptr));
+    int wyniki[6];
+    for (int i = 0; i < 6; i++)
+    {
+        wyniki[i] = (std::rand() % 49) + 1;
+    }
+    return wyniki;
+}
+
+int* lotto2()
+{
+    std::srand(std::time(nullptr));
+    int *wyniki = new int[6];
+    for (int i = 0; i < 6; i++)
+    {
+        wyniki[i] = (std::rand() % 49) + 1;
+    }
+    return wyniki;
+}
+
+void wypiszWyniki(int wyniki[])
+{
+    for (int i = 0; i < 6; i++)
+    {
+        cout << wyniki[i] << " ";
+    }
+    cout << endl;
 }
