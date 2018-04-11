@@ -8,7 +8,11 @@
 
 using namespace std;
 
-void funkcja(int param_1, int param_2, int param_3, int param_4)
+void funkcja(
+    int param_1, 
+    int param_2, 
+    int param_3, 
+    int param_4)
 {
     cout << "adres przekazanych parametrow:" << endl;
     // parametry przekazywane s¹ od prawej do lewej (konwencja __cdecl)

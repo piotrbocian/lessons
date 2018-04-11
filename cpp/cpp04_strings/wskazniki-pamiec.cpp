@@ -6,13 +6,14 @@
 
 using namespace std;
 
-struct MojaStruktura
+class MojaStruktura
 {
-    MojaStruktura()
+public:
+    MojaStruktura() // konstruktor
     {
         cout << "konstruktor - utworzenie MojeStruktura" << endl;
     }
-    ~MojaStruktura()
+    ~MojaStruktura()    // destruktor
     {
         cout << "destruktor - usuniecie MojaSturktura" << endl;
     }
@@ -47,8 +48,8 @@ void main()
         // czas ¿ycia obiektów na STERCIE - do czasu ich zwolnienia
     }
 
-    // Czy to oznacza, ¿e mo¿emy teraz skorzystaæ z a4?
-    // cout << a4;
+    // Czy to oznacza, ¿e mo¿emy teraz skorzystaæ z b1?
+    //cout << *b1;
     // Nie- obiekt new int(4) zosta³ zadeklarowany co prawda na stercie,
     // ale wskaŸnik do niego by³ "tylko" na stosie i zosta³ ju¿ zwolniony
 
@@ -80,17 +81,17 @@ void main()
     // symbolizuj¹cych baloniki z helem z cyframi '1' oraz '8'
     {
         // zadeklarujmy dwie zmienne typu int u¿ywaj¹c operatora new
-        char *czerwony_balonik_z_helem = new char('1');
-        char *zielony_balonik_z_helem = new char('8');
+        char *czerwony_sznurek = new char('1');
+        char *zielony_sznurek = new char('8');
 
-        cout << "*czerwony = " << *czerwony_balonik_z_helem << ", *zielony = " << *zielony_balonik_z_helem << endl;
+        cout << "*czerwony = " << *czerwony_sznurek << ", *zielony = " << *zielony_sznurek << endl;
 
         // teraz przepnijmy jeden wskaŸnik do drugiego
-        zielony_balonik_z_helem = czerwony_balonik_z_helem;
+        zielony_sznurek = czerwony_sznurek;
 
-        cout << "*czerwony = " << *czerwony_balonik_z_helem << ", *zielony = " << *zielony_balonik_z_helem << endl;
-        delete zielony_balonik_z_helem;
-        //delete czerwony_balonik_z_helem;   // czrwony pokazuje teraz na t¹ sam¹ pamiêæ co zielony, która zosta³a ju¿ zwolniona!!!
+        cout << "*czerwony = " << *czerwony_sznurek << ", *zielony = " << *zielony_sznurek << endl;
+        delete zielony_sznurek;
+        //delete czerwony_szunurek;   // czrwony pokazuje teraz na t¹ sam¹ pamiêæ co zielony, która zosta³a ju¿ zwolniona!!!
         // a pamiêæ po czerwonym nie zosta³a zwolniona - wyst¹pi³ tzw WYCIEK PAMIÊCI ("MEMORY LEAK")
     }
 
@@ -105,8 +106,8 @@ void main()
         int *dynamiczna = new int[100];
 
         // zwróæ uwagê na ró¿nicê deklaracji tablicy vs pojedynczej zmiennej:
-        int *tablica = new int[100];
-        int *pojedyncza_zmienna = new int(100);
+        int *tablica =              new int[100];
+        int *pojedyncza_zmienna =   new int(100);
 
         // taka tablica MUSI zostaæ zwolniona kiedy przestaje byæ potrzebna
         // u¿ywamy operatora delete[]
@@ -125,11 +126,6 @@ void main()
 
 
     // Zadanie - sprawdz ile maksymalnie pamiêci uda siê zaalokowaæ w trybie x86 (32 bity)
-    for (int i = 1; ; i++)
-    {
-        new char[1024 * 1024];
-        cout << i << " MB!" << endl;
-    }
     // a ile w trybie x64?
     // Przypomnienie - a ile mo¿na bylo zaalokowac na stosie?
 
