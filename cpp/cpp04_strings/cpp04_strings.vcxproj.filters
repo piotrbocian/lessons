@@ -35,5 +35,8 @@
     <ClCompile Include="wskazniki-sizeof.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="sprawdzPoprawnoscHasla_test.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
