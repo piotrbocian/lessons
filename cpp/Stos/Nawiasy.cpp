@@ -42,7 +42,7 @@ bool isBalanced(string line)
     return st.empty();
 }
 
-int main()
+int nawiasy()
 {
     string line = "()(){[]}";
 
