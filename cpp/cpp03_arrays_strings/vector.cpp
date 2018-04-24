@@ -1,3 +1,6 @@
+// Copyright 2018 Piotr Bocian
+// Opracowanie Piotr Bocian
+
 #include "stdafx.h" // for Visual Studio only
 
 #include <cmath>

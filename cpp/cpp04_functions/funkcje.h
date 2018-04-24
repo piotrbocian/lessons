@@ -1,3 +1,6 @@
+// Copyright 2018 Piotr Bocian
+// Opracowanie Piotr Bocian
+
 #pragma once
 
 unsigned long long fib(int n);

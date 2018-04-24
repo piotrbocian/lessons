@@ -1,3 +1,6 @@
+// Copyright 2018 Piotr Bocian
+// Opracowanie Piotr Bocian
+
 #include <iostream> 
 #include <stack>
 using namespace std;

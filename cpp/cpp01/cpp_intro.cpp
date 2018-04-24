@@ -44,7 +44,7 @@ int main()
         long int l1 = 2147483647; long l2 = 0;       // >=4 bytes
         long long int ll1 = 9223372036854775807; long long ll2 = 0;   // >=8 bytes
         float f1 = 167.899f, f2 = 124e4f;
-        double d1;
+        double d1 = 123.456;
 
         cout << "size of bool: " << sizeof(bool) << endl;
         cout << "size of char: " << sizeof(char) << endl;
