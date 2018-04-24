@@ -1,3 +1,6 @@
+// Copyright 2018 Piotr Bocian
+// Opracowanie Piotr Bocian
+
 #pragma once
 #include <iostream>
 #include <string>
@@ -22,7 +25,7 @@ public:
     int lozka;
 
     // cena pokoju za noc
-    float cena;
+    double cena;
 
     // true - pokój jest zajety
     // false - pokój jest wolny
@@ -31,7 +34,7 @@ public:
     // nazwisko goœcia zameldowanego w pokoju
     string nazwiskoGoscia;
 
-    Pokoj(int standard, int lozka, float cena)
+    Pokoj(int standard, int lozka, double cena)
     {
         this->standard = standard;
         this->lozka = lozka;
@@ -40,18 +43,25 @@ public:
         this->nazwiskoGoscia = "";
     }
 
-    // Poniewa¿ jest zdefiniowany nie-domyœlny konstruktor
-    // to musimy dodaæ jeszcze konstruktor domyœlny aby program siê skompilowa³.
-    // Mo¿na tego oczywiœcie unikn¹æ - pokazaæ jak.
+    // Szczegó³ którym nie zaprz¹tajmy sobie na razie glowy.
+    //   *Poniewa¿ jest zdefiniowany nie-domyœlny konstruktor
+    //   *to musimy dodaæ jeszcze konstruktor domyœlny aby program siê skompilowa³.
+    // O konstruktorach bêdziemy jeszcze mówiæ wiêcej.
+
     Pokoj()
     {
     }
 
+    // lub od C++11
+    //Pokoj() = default;
+
     // wypisz informacje o pokoju
     void wypisz()
     {
-        cout << setw(5) << standard << setw(5) << lozka << setw(10) << cena;
-        cout << setw(20) << nazwiskoGoscia << endl;
+        cout << setw(5) << standard
+             << setw(5) << lozka
+             << setw(10) << cena
+             << setw(20) << nazwiskoGoscia << endl;
     }
 
     void zamelduj(string nazwisko)
