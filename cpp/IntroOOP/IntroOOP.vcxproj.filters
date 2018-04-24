@@ -18,9 +18,6 @@
     <ClInclude Include="targetver.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="FiguryGeometryczne.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="Kantor.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>

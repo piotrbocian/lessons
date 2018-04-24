@@ -147,7 +147,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="FiguryGeometryczne.h" />
     <ClInclude Include="Kantor.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
