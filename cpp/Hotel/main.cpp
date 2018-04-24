@@ -71,15 +71,8 @@ int main()
     zajety[9] = true;
     nazwiskoGoscia[9] = "Nowak";
 
-    // Cwiczenie
-    // zmodyfikujmy teraz funkcje WypiszPokoje aby uwzglêdnia³a informacjê
-    // czy pokój jest zajêty czy wolny
-    // jesli jest zajêty - niech napiszê nazwisko goœcia
 
-
-    // Taki program przestaje nam siê szybko skalowaæ.
-    // Za ka¿dym razem gdy dodajemy nowy parametr do pokoju
-    // musimy modyfikowaæ znaczn¹ czêœæ kodu.
+    // Interfejs uzytkownika w konsoli
     char c;
     do {
         cout << "Wybierz opcje" << endl;
@@ -139,6 +132,9 @@ int main()
 
     return 0;
 }
+// Taki program przestaje nam siê szybko skalowaæ.
+// Za ka¿dym razem gdy dodajemy nowy parametr do pokoju
+// musimy modyfikowaæ znaczn¹ czêœæ kodu.
 
 void WypiszPokoje(const int liczbaPokoi, int standard[], int lozka[], float cena[])
 {
