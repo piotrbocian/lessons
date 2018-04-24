@@ -24,7 +24,7 @@ int main()
     std::cout << "hello" << std::endl;
     cout << "hello" << endl;    // mo¿emy pomin¹æ std:: dziêki linijce (11) using namespace std;
     cout << "Jestem Piotr, mam " << 31 << " lat" << endl;   // 31 jest konwertowane na tekst (string)
-    cout << "Jestem nerdem, mam " << 0x1f << " lat" << endl;// 0x1f jest konwertowane na tekst i efekt dzia³ania bêdzie identyczny jak powy¿ej
+    cout << "Jestem programista, mam " << 0x1f << " lat" << endl;// 0x1f jest konwertowane na tekst i efekt dzia³ania bêdzie identyczny jak powy¿ej
 
 
     // C style
@@ -44,6 +44,7 @@ int main()
         long int l1 = 2147483647; long l2 = 0;       // >=4 bytes
         long long int ll1 = 9223372036854775807; long long ll2 = 0;   // >=8 bytes
         float f1 = 167.899f, f2 = 124e4f;
+        double d1;
 
         cout << "size of bool: " << sizeof(bool) << endl;
         cout << "size of char: " << sizeof(char) << endl;
@@ -120,7 +121,7 @@ int main()
         // podobnie jak w instrukcji if(),
         // po wykonaniu operacji w nawiasach for(;;) wykonana jest TYLKO jedna nastêpna instrukcja
         // jesli chcemy wykonac wiecej instrukcji, musz¹ byæ zawarte w { }
-        for (i = 0; i < 10; i++)
+        for (i = 0; i < 10; i++)    // i = i+1
         {
             cout << i << endl;
             cout << i*i << endl;
