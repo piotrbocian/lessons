@@ -15,18 +15,22 @@ public:
     }
     float kupUsd(float pln)
     {
+        return pln / (USD_PLN + SPREAD / 2);
     }
 
     float kupEur(float pln)
     {
+        return pln / (EUR_PLN + SPREAD / 2);
     }
 
-    float sprzedajUsd(float pln)
+    float sprzedajUsd(float usd)
     {
+        return usd * (USD_PLN - SPREAD / 2);
     }
 
-    float sprzedajEur(float pln)
+    float sprzedajEur(float eur)
     {
+        return eur * (EUR_PLN - SPREAD / 2);
     }
 
 private:
@@ -37,13 +41,13 @@ private:
 
 void main()
 {
-    Kantor k(3.40, 4.30);
+    Kantor kantor(3, 4);
     float pln = 100;
-    float usd = k.kupUsd(usd);
-    pln = k.sprzedajUsd(usd);
+    float usd, eur;
+    usd = kantor.kupUsd(pln);
+    pln = kantor.sprzedajUsd(usd);
+    eur = kantor.kupEur(pln);
+    pln = kantor.sprzedajEur(eur);
 
-    float eur = k.kupEur(pln);
-    pln = k.sprzedajEur(eur);
-
-    float zarobek = 100 - pln;
+    cout << "zysk kantoru = " << 100 - pln << endl;
 }
