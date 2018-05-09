@@ -147,11 +147,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Auta.h" />
     <ClInclude Include="Kantor.h" />
+    <ClInclude Include="Kwadrat.h" />
+    <ClInclude Include="Prostokat.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IntroOOP.cpp" />
+    <ClCompile Include="IntroOOP_2.cpp" />
+    <ClCompile Include="Prostokat.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
