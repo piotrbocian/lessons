@@ -3,6 +3,7 @@
 
 #include <iostream> 
 #include <stack>
+#include <cassert>
 using namespace std;
 
 bool isLeft(char c)
@@ -47,8 +48,30 @@ bool isBalanced(string line)
 
 int nawiasy()
 {
-    string line = "()(){[]}";
+    assert(isBalanced("()") == true);
+    assert(isBalanced("{}") == true);
+    assert(isBalanced("({})") == true);
+    assert(isBalanced("[]") == true);
+    assert(isBalanced("[][]") == true);
+    assert(isBalanced("{[()]}") == true);
 
+    assert(isBalanced("(") == false);
+    assert(isBalanced("{") == false);
+    assert(isBalanced("[") == false);
+    assert(isBalanced("]") == false);
+    assert(isBalanced("}") == false);
+    assert(isBalanced(")") == false);
+    assert(isBalanced("(]") == false);
+    assert(isBalanced("([)]") == false);
+    assert(isBalanced("((())") == false);
+
+    assert(isBalanced("()") == true);
+    assert(isBalanced("(") == false);
+    assert(isBalanced("[()]") == true);
+    assert(isBalanced("({}])") == false);
+    assert(isBalanced("") == true);
+
+    string line = "()(){[]}";
     cout << ((isBalanced(line)) ? "YES\n" : "NO\n");
 
     return 0;
