@@ -10,7 +10,7 @@ void fun(char tab[])    // deklaracja z rozmiarem 'char tab[100]' nic tu nie zmi
     cout << "wewnatrz funkcji: sizeof(tab) = " << sizeof(tab) << endl;
 }
 
-int main()
+int wskazniki_sizeof()
 {
     // zadeklarujmy kilka zmiennych wskaŸnikowych
     int *p_i;

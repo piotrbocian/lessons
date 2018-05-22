@@ -23,7 +23,7 @@ int* lotto1();
 int* lotto2();
 void wypiszWyniki(int wyniki[]);
 
-void main()
+void wskazniki_pamiec()
 {
     // Wstêp - czas ¿ycia vs zakres wa¿noœci
 

@@ -18,7 +18,7 @@ void zwieksz_o_100(int &a)
     a += 100;
 }
 
-int main()
+int wskazniki_wprowadzenie()
 { 
     // deklarujemy wskaznik 'p_a' jako zmienna pokazujaca na adres pamieci pod ktorym jest zmienna 'a'
     {
