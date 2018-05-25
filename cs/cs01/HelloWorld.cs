@@ -14,7 +14,7 @@ namespace HelloWorld
             // Temat 1 - wypisywanie tekstu na konsole
             Console.WriteLine("hello");
             Console.WriteLine("Jestem Piotr, mam " + 31 + " lat");   // 31 jest konwertowane na tekst (string)
-            Console.WriteLine("Jestem nerdem, mam " + 0x1f + " lat");// 0x1f jest konwertowane na tekst i efekt działania będzie identyczny jak powyżej
+            Console.WriteLine("Jestem programistą, mam " + 0x1f + " lat");// 0x1f jest konwertowane na tekst i efekt działania będzie identyczny jak powyżej
             Console.WriteLine("Jestem Piotr, mam {0} lat", 31);
 
             // Temat 2 - zmienne

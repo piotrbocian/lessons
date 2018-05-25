@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cs02", "cs02\cs02.csproj", "{6C0BB108-F4FA-4B83-A47B-B7745984D118}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cs02_tablice", "cs02\cs02_tablice.csproj", "{6C0BB108-F4FA-4B83-A47B-B7745984D118}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "cs01", "cs01\cs01.csproj", "{429E8FC0-55F6-420E-B72A-AA095438BB98}"
 EndProject
