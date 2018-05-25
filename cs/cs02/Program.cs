@@ -1,4 +1,7 @@
-﻿using System;
+﻿// Opracowanie Piotr Bocian 2018
+// Copyright 2018 Piotr Bocian
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;

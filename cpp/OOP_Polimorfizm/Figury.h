@@ -10,7 +10,7 @@ using namespace std;
 class Figura
 {
 public:
-    // metody czysto wirtualne ('pure virtual')
+    // metody abstrakcyjne, zwane w C++ czysto wirtualnymi ('pure virtual')
     virtual double obliczPole() = 0;
     virtual double obliczObwod() = 0;
 };
