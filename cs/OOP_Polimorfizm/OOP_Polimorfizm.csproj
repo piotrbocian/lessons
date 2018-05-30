@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6C0BB108-F4FA-4B83-A47B-B7745984D118}</ProjectGuid>
+    <ProjectGuid>{266B0517-E4BF-49C3-9D49-60261F654286}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>cs02</RootNamespace>
-    <AssemblyName>cs02</AssemblyName>
+    <RootNamespace>OOP_KlasyPochodne</RootNamespace>
+    <AssemblyName>OOP_KlasyPochodne</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Figury.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
