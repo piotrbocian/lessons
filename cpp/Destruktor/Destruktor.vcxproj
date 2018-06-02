@@ -147,7 +147,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Kwadrat.h" />
     <ClInclude Include="Tablica.h" />
   </ItemGroup>
   <ItemGroup>

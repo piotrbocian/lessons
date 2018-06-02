@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Finalizers", "Finalizers\Fi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exceptions", "Exceptions\Exceptions.csproj", "{9CE2DA1A-1B76-4348-8858-2B2BBD769805}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Destruktor", "Destruktor\Destruktor.csproj", "{54736BF5-ED28-4DEC-9132-40D2334376C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,18 @@ Global
 		{9CE2DA1A-1B76-4348-8858-2B2BBD769805}.Release|x64.Build.0 = Release|Any CPU
 		{9CE2DA1A-1B76-4348-8858-2B2BBD769805}.Release|x86.ActiveCfg = Release|Any CPU
 		{9CE2DA1A-1B76-4348-8858-2B2BBD769805}.Release|x86.Build.0 = Release|Any CPU
+		{54736BF5-ED28-4DEC-9132-40D2334376C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54736BF5-ED28-4DEC-9132-40D2334376C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54736BF5-ED28-4DEC-9132-40D2334376C3}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{54736BF5-ED28-4DEC-9132-40D2334376C3}.Debug|x64.Build.0 = Debug|Any CPU
+		{54736BF5-ED28-4DEC-9132-40D2334376C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{54736BF5-ED28-4DEC-9132-40D2334376C3}.Debug|x86.Build.0 = Debug|Any CPU
+		{54736BF5-ED28-4DEC-9132-40D2334376C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54736BF5-ED28-4DEC-9132-40D2334376C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54736BF5-ED28-4DEC-9132-40D2334376C3}.Release|x64.ActiveCfg = Release|Any CPU
+		{54736BF5-ED28-4DEC-9132-40D2334376C3}.Release|x64.Build.0 = Release|Any CPU
+		{54736BF5-ED28-4DEC-9132-40D2334376C3}.Release|x86.ActiveCfg = Release|Any CPU
+		{54736BF5-ED28-4DEC-9132-40D2334376C3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
