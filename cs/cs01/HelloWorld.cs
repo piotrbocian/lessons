@@ -46,7 +46,7 @@ namespace HelloWorld
 
             }
 
-            // Temat 3 - wczytywanie danych z konsoli przy pomocy std::cin
+            // Temat 3 - wczytywanie danych z konsoli
             Console.WriteLine("Podaj swoje imie: "); ;
             string imie = Console.ReadLine();
 
