@@ -1,8 +1,8 @@
-﻿using System;
+﻿// Copyright 2018 Piotr Bocian
+// Opracowanie Piotr Bocian
+
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace OOP_Operatory
 {
