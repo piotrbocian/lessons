@@ -25,6 +25,7 @@ public class Example
             f.Close();
         }
 
+        // metoda dla interfejsu IDisposable, robi to samo co Zamknij()
         public void Dispose()
         {
             Console.WriteLine("zamykam plik w metodzie Dispose");
@@ -47,18 +48,23 @@ public class Example
         {
             plik1.Czytaj();
         }
-        finally
+        catch (Exception e)
+        {
+            // obsługa wyjątków
+        }
+        finally // sekcja finally - wolana zawsze, 
+                // niezależnie czy wyjątek pojawił się czy nie
         {
             plik1.Zamknij();
             // alternatywnie
-            ((IDisposable)plik1).Dispose();
+            //plik1.Dispose();
         }
 
-        // za pomocą finally
+        // za pomocą sekcji using () {}
         using (Plik plik2 = new Plik("test.txt"))
         {
             plik2.Czytaj();
-        }
+        } // plik2.Dispose() jest tutaj zawołany automatycznie
 
         // ten plik nie zostanie zamkniety
         Plik plik3 = new Plik("test.txt");
